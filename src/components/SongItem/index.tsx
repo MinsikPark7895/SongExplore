@@ -26,7 +26,7 @@ function SongItem({ title, singer, no, isFavorite = false, onToggleFavorite }: S
               onClick={handleToggleFavorite}
               title={isFavorite ? '찜 해제' : '찜하기'}
             >
-              {isFavorite ? '❤️' : '🤍'}
+              {isFavorite ? '🌱' : '🌿'}
             </button>
           )}
           <div className="song-item__info">

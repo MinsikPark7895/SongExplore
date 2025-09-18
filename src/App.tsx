@@ -15,13 +15,13 @@ function Navigation() {
         to="/" 
         className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
       >
-        🔍 검색
+        🌿 검색
       </Link>
       <Link 
         to="/favorites" 
         className={`nav-link ${location.pathname === '/favorites' ? 'active' : ''}`}
       >
-        ❤️ 찜한 노래
+        🌱 찜한 노래
       </Link>
     </nav>
   );

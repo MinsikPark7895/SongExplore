@@ -1,18 +1,28 @@
 .song-item {
-  background: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
   border-radius: 16px;
   margin-bottom: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 12px rgba(76, 175, 80, 0.1);
+  border: 1px solid #e8f5e8;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
 }
 
+.song-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+}
+
 .song-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  border-color: #e2e8f0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.15);
+  border-color: #c8e6c9;
 }
 
 .song-item__content {
@@ -47,7 +57,7 @@
 }
 
 .song-item__favorite-btn:hover {
-  background-color: #f8fafc;
+  background-color: #e8f5e8;
   transform: scale(1.1);
 }
 
@@ -56,19 +66,14 @@
 }
 
 .song-item__favorite-btn.favorited:hover {
-  background-color: #fef2f2;
-}
-
-.song-item__info {
-  flex: 1;
-  min-width: 0;
+  background-color: #c8e6c9;
 }
 
 .song-item__title {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 6px;
-  color: #1e293b;
+  color: #2d4a2d;
   line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -76,7 +81,7 @@
 }
 
 .song-item__singer {
-  color: #64748b;
+  color: #5a7c5a;
   font-size: 14px;
   font-weight: 500;
   overflow: hidden;
@@ -87,11 +92,11 @@
 .song-item__number {
   font-size: 18px;
   font-weight: 700;
-  color: #667eea;
+  color: #4caf50;
   min-width: 60px;
   text-align: right;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

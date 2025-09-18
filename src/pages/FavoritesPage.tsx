@@ -45,7 +45,7 @@ function FavoritesPage() {
                     onClick={() => toggleFavorite(no)}
                     title="찜 해제"
                   >
-                    ❤️
+                    🌱
                   </button>
                   <div className="favorite-item__info">
                     <div className="favorite-item__title">
@@ -65,7 +65,7 @@ function FavoritesPage() {
         </div>
       ) : (
         <div className="empty-container">
-          <div style={{ fontSize: "64px", marginBottom: "24px" }}>🤍</div>
+          <div style={{ fontSize: "64px", marginBottom: "24px" }}>🌿</div>
           <h2>찜한 노래가 없습니다</h2>
           <p>검색 페이지에서 마음에 드는 노래를 찜해보세요!</p>
         </div>

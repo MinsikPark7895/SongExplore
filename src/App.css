@@ -8,8 +8,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fafc;
-  color: #1e293b;
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 50%, #e6f3ff 100%);
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(102, 187, 106, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(129, 199, 132, 0.1) 0%, transparent 50%);
+  color: #2d4a2d;
   line-height: 1.6;
 }
 
@@ -17,18 +21,34 @@ body {
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+  box-shadow: 0 0 30px rgba(76, 175, 80, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 /* 네비게이션 스타일 */
 .nav {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 50%, #81c784 100%);
   padding: 20px;
   display: flex;
   gap: 30px;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="leaves" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23leaves)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .nav-link {
@@ -36,25 +56,32 @@ body {
   color: #ffffff;
   font-weight: 600;
   font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 12px 24px;
+  border-radius: 30px;
   transition: all 0.3s ease;
   position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .nav-link.active {
-  background-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* 페이지 컨테이너 */
 .page-container {
   padding: 20px;
   min-height: calc(100vh - 80px);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
 }
 
 /* 검색 결과 */
@@ -65,14 +92,24 @@ body {
 .search-results__header {
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #f1f5f9;
+  border-bottom: 2px solid #e8f5e8;
+  position: relative;
+}
+
+.search-results__header::after {
+  content: '🌿';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 20px;
+  opacity: 0.6;
 }
 
 .search-results__header h3 {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #334155;
+  color: #2d4a2d;
 }
 
 /* 찜한 노래 페이지 */
@@ -82,23 +119,34 @@ body {
   align-items: center;
   margin-bottom: 24px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #f1f5f9;
+  border-bottom: 2px solid #e8f5e8;
+  position: relative;
+}
+
+.favorites-header::after {
+  content: '🌱';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 24px;
+  opacity: 0.6;
 }
 
 .favorites-header h1 {
   margin: 0;
   font-size: 28px;
   font-weight: 700;
-  color: #1e293b;
+  color: #2d4a2d;
 }
 
 .favorites-count {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
 }
 
 .favorites-list {
@@ -108,17 +156,29 @@ body {
 }
 
 .favorite-item {
-  background: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 12px rgba(76, 175, 80, 0.1);
+  border: 1px solid #e8f5e8;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.favorite-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
 }
 
 .favorite-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.15);
+  border-color: #c8e6c9;
 }
 
 .favorite-item__content {
@@ -151,23 +211,19 @@ body {
 }
 
 .favorite-item__remove-btn:hover {
-  background-color: #fef2f2;
+  background-color: #e8f5e8;
   transform: scale(1.1);
-}
-
-.favorite-item__info {
-  flex: 1;
 }
 
 .favorite-item__title {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 6px;
-  color: #1e293b;
+  color: #2d4a2d;
 }
 
 .favorite-item__subtitle {
-  color: #64748b;
+  color: #5a7c5a;
   font-size: 14px;
   font-weight: 500;
 }
@@ -175,10 +231,10 @@ body {
 .favorite-item__number {
   font-size: 18px;
   font-weight: 700;
-  color: #667eea;
+  color: #4caf50;
   min-width: 60px;
   text-align: right;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -189,7 +245,11 @@ body {
 .empty-container {
   text-align: center;
   padding: 60px 20px;
-  color: #64748b;
+  color: #5a7c5a;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.1);
 }
 
 .loading-container h2,
@@ -197,14 +257,14 @@ body {
   margin: 0 0 10px 0;
   font-size: 24px;
   font-weight: 600;
-  color: #334155;
+  color: #2d4a2d;
 }
 
 .loading-container p,
 .empty-container p {
   margin: 0;
   font-size: 16px;
-  color: #64748b;
+  color: #5a7c5a;
 }
 
 /* 버튼 공통 스타일 */
@@ -223,31 +283,32 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
   color: white;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
 .btn-secondary {
-  background-color: #f1f5f9;
-  color: #475569;
-  border: 1px solid #e2e8f0;
+  background-color: #e8f5e8;
+  color: #2d4a2d;
+  border: 1px solid #c8e6c9;
 }
 
 .btn-secondary:hover {
-  background-color: #e2e8f0;
+  background-color: #c8e6c9;
 }
 
 /* 카드 스타일 */
 .card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(76, 175, 80, 0.1);
+  border: 1px solid #e8f5e8;
   overflow: hidden;
 }
 

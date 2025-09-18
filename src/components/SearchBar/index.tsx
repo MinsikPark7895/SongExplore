@@ -7,7 +7,7 @@ function SearchBar() {
   return (
     <div className="search-bar">
       <div className="search-bar__container">
-        <div className="search-bar__icon">🔍</div>
+        <div className="search-bar__icon">🌿</div>
         <input
           type="text"
           value={query}
