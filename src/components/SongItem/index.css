@@ -1,0 +1,144 @@
+.song-item {
+  background: white;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.song-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-color: #e2e8f0;
+}
+
+.song-item__content {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.song-item__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.song-item__favorite-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+
+.song-item__favorite-btn:hover {
+  background-color: #f8fafc;
+  transform: scale(1.1);
+}
+
+.song-item__favorite-btn.favorited {
+  transform: scale(1.1);
+}
+
+.song-item__favorite-btn.favorited:hover {
+  background-color: #fef2f2;
+}
+
+.song-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-item__title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #1e293b;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song-item__singer {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song-item__number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #667eea;
+  min-width: 60px;
+  text-align: right;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 애니메이션 효과 */
+.song-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .song-item__content {
+    padding: 16px;
+  }
+  
+  .song-item__left {
+    gap: 12px;
+  }
+  
+  .song-item__favorite-btn {
+    font-size: 24px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+  
+  .song-item__title {
+    font-size: 15px;
+  }
+  
+  .song-item__singer {
+    font-size: 13px;
+  }
+  
+  .song-item__number {
+    font-size: 16px;
+    min-width: 50px;
+  }
+}
